@@ -1,0 +1,46 @@
+{
+	"name": "B.O.B.",
+	"main": "src/index.js",
+	"compatibility_date": "2026-10-29",
+	"observability": {
+		"logs": {
+		"enabled": true,
+		"head_sampling_rate": 1,
+		"invocation_logs": true,
+		"persist": true
+		},
+		"traces": {
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"persist": true
+		},
+		"issues": {
+		"enabled": true
+		}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "bob",
+			"migrations_dir": "database/migrations"
+		}
+	],
+	"version_metadata": {
+		"binding": "CF_VERSION_METADATA"
+	},
+	"env": {
+		"development": {
+			"name": "bob-development",
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "bob-development",
+					"migrations_dir": "database/migrations"
+				}
+			],
+			"version_metadata": {
+				"binding": "CF_VERSION_METADATA"
+			}
+		}
+	}
+}

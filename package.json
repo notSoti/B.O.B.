@@ -1,0 +1,34 @@
+{
+	"name": "B.O.B.",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "node scripts/dev.js",
+		"deploy": "node scripts/deploy.js",
+		"lint": "eslint .",
+		"sync-commands": "node scripts/register-commands.js"
+	},
+	"cloudflare": {
+		"bindings": {
+			"DISCORD_PUBLIC_KEY": {
+				"description": "Discord application public key, from the Developer Portal's General Information page. Required to verify interaction requests."
+			},
+			"DISCORD_APPLICATION_ID": {
+				"description": "Discord application ID, from the Developer Portal's General Information page."
+			},
+			"DISCORD_BOT_TOKEN": {
+				"description": "Encrypted bot token from the Discord Developer Portal's Bot page. Used for Discord API requests and syncing global commands during production builds."
+			}
+		}
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.0",
+		"eslint": "^9.39.0",
+		"wrangler": "^4.164.0"
+	},
+	"dependencies": {
+		"discord-interactions": "^4.4.0",
+		"dotenv": "^16.4.7",
+		"ms": "^2.1.3"
+	}
+}
